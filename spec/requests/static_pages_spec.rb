@@ -9,7 +9,12 @@ describe "Static pages" do
 		
 		it "should have the right title" do
 			visit '/static_pages/home'
-			expect(page).to have_title("Ruby on Rails Tutorial Sample App | Home")
+			expect(page).to have_title("Ruby on Rails Tutorial Sample App")
+		end
+		
+		it "should have the right title 2: title harder" do
+			visit '/static_pages/home'
+			expect(page).to_not have_title("| Home")
 		end
 	end
 	
@@ -21,7 +26,7 @@ describe "Static pages" do
 		
 		it "should have the right title" do
 			visit '/static_pages/help'
-			expect(page).to have_title("Ruby on Rails Tutorial Sample App | Help")
+			expect(page).to have_title("Ruby on Rails Tutorial Sample App")
 		end
 	end
 	
@@ -33,7 +38,7 @@ describe "Static pages" do
 		
 		it "should have the right title" do
 			visit '/static_pages/about'
-			expect(page).to have_title("Ruby on Rails Tutorial Sample App | About Us")
+			expect(page).to have_title("Ruby on Rails Tutorial Sample App")
 		end
 	end
 end
